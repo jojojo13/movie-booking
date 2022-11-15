@@ -1,0 +1,24 @@
+.contain{
+    background-color: #205081;
+    color: #fff;
+    align-items: center;
+}
+.action{
+    align-items: center;
+}
+p{
+    margin: 0;
+}
+.welcome{
+    align-items: center;
+}
+.fa-search{
+    color: black;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+}
+.box{
+    position: relative;
+}

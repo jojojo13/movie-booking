@@ -1,10 +1,10 @@
 <div class="home p-3">
   <div class="list d-flex justify-content-between">
  
-    <div class="item">
+    <div class="item" *ngFor="let movie in listMovie">
         <h5>Hanh Dong</h5>
       <div class="box">
-        <img src="../../../assets/Frame 6.jpg" alt="" />
+        <img [src]="movie.large_image" alt="" />
       </div>
       <div class="schedule">
         <p>View schedule</p>

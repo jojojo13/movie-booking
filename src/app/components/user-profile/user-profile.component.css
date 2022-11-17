@@ -58,3 +58,6 @@ p{
 .active{
   background-color: #C6FAD6;
 }
+.render{
+   width: calc(100vw - 240px);
+}

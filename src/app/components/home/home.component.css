@@ -1,24 +1,40 @@
 .home {
-    background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(149,45,253,1) 84%);
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(149, 45, 253, 1) 84%
+  );
 }
 .box {
   width: 155px;
   height: 194px;
 }
-.item{
-    color: #fff;
+.item {
+  color: #fff;
 }
 .box img {
   width: 100%;
   height: 100%;
   align-self: stretch;
 }
-.schedule{
-   background-color:  rgba(243, 105, 105, 0.97);
-   text-align: center;
+.schedule {
+  background-color: rgba(243, 105, 105, 0.97);
+  text-align: center;
 }
-.schedule p{
-    cursor: pointer;
-    font-size: 18px;
+.schedule p {
+  cursor: pointer;
+  font-size: 18px;
+}
+.wrap-carousel {
+  background: url("../../../assets/mvbn.jpg");
+  height: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 5%;
+  display: flex;
+  align-items: center;
+}
+.list{
+  flex-wrap: wrap;
 }

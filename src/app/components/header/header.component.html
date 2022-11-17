@@ -1,19 +1,19 @@
-<div class="contain p-2">
-    <div class="wrap d-flex justify-content-between">
-        <div class="logo">
-            <img src="../../../assets/logo.png" alt="">
-        </div>
-        <div class="action d-flex">
-            <p class="mx-4">Showtime</p>
-            <p class="mx-4">Movies</p>
-            <div class="box">
-                <input type="text">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="welcome d-flex">
-            <p><i class="fa fa-user mx-2" aria-hidden="true"></i>Welcome, juliam</p>
-            <p><i class="fa fa-sign-out ml-4 mr-1" aria-hidden="true"></i>Logout</p>
-        </div>
+<div class="contain p-2 px-5">
+  <div class="wrap d-flex justify-content-between">
+    <div class="logo" routerLink="">
+      <img src="../../../assets/logo.png" alt="" />
     </div>
+    <div class="action d-flex">
+      <p class="mx-4">Showtime</p>
+      <p class="mx-4">Movies</p>
+      <div class="box">
+        <input type="text" name="searchTxt" [(ngModel)]="searchTxt" />
+        <i class="fa fa-search" aria-hidden="true" (click)="search(searchTxt)"></i>
+      </div>
+    </div>
+    <div class="welcome d-flex">
+      <p class="" routerLink="user"><i class="fa fa-user mx-2" aria-hidden="true"></i>Welcome, juliam</p>
+      <p><i class="fa fa-sign-out ml-4 mr-1" aria-hidden="true"></i>Logout</p>
+    </div>
+  </div>
 </div>

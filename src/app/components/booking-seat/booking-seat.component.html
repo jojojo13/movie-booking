@@ -1,0 +1,91 @@
+<div class="contain">
+  <div class="booking">
+    <h3 class="font-weight-bold text-center p-4">Cinema Room 1</h3>
+    <div class="booking-seat d-flex justify-content-between">
+      <div class="seats d-flex">
+        <div class="seat-left d-flex flex-wrap">
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div
+            class="seat unavailable"
+            (click)="toggleClass($event, 'selected')"
+          >
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat vip" (click)="toggleClass($event, 'selected')">
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat vip" (click)="toggleClass($event, 'selected')">
+            1
+          </div>
+          <div
+            class="seat unavailable"
+            (click)="toggleClass($event, 'selected')"
+          >
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div
+            class="seat unavailable"
+            (click)="toggleClass($event, 'selected')"
+          >
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+        </div>
+        <div class="seat-right d-flex flex-wrap">
+          <div class="seat selected" (click)="toggleClass($event, 'selected')">
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat selected" (click)="toggleClass($event, 'selected')">
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat selected" (click)="toggleClass($event, 'selected')">
+            1
+          </div>
+          <div class="seat" (click)="toggleClass($event, 'selected')">1</div>
+          <div class="seat vip" (click)="toggleClass($event, 'selected')">
+            1
+          </div>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="movie-detail">
+          <p><span>Movie</span>:Gingerclown</p>
+          <p><span>Time</span>:12:00 PM</p>
+          <p><span>Tickets</span>:12</p>
+          <p><span>Totals</span>:${{ total }}</p>
+          <p><span>Seats</span>:Gingerclown</p>
+        </div>
+        <button class="bookBtn">Book now</button>
+        <ul class="seatCharts-legendList">
+          <li class="seatCharts-legendItem">
+            <div class="seatCharts-seat seatCharts-cell available"></div>
+            <span class="seatCharts-legendDescription">Available</span>
+          </li>
+          <li class="seatCharts-legendItem">
+            <div class="seatCharts-seat seatCharts-cell unavailable"></div>
+            <span class="seatCharts-legendDescription">Sold</span>
+          </li>
+          <li class="seatCharts-legendItem">
+            <div class="seatCharts-seat seatCharts-cell selected"></div>
+            <span class="seatCharts-legendDescription">Selected</span>
+          </li>
+          <li class="seatCharts-legendItem">
+            <div class="seatCharts-seat seatCharts-cell vip"></div>
+            <span class="seatCharts-legendDescription">VIP</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

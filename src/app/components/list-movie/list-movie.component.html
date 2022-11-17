@@ -1,0 +1,42 @@
+<div class="contain">
+  <div class="title py-3">
+    <h5 class="text-center m-0">Movie List</h5>
+  </div>
+  <div class="wrap">
+    <button class="btn btn-primary font-weight-bold px-4" routerLink="/movie-booking/add">
+      <i class="fa fa-plus" aria-hidden="true"></i>Add new
+    </button>
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Movie (ENG)</th>
+          <th scope="col">Movie (VN)</th>
+          <th scope="col">Release date</th>
+          <th>Movie Production Company</th>
+          <th>Duration</th>
+          <th>Version</th>
+          <th>Detail</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of listMovie; let i = index">
+          <td scope="row">{{ i + 1 }}</td>
+          <td>{{ movie.movie_name_english }}</td>
+          <td>{{ movie.movie_name_vn }}</td>
+          <td>{{ movie.from_date }}</td>
+          <td><p>{{ movie.movie_production_company }}</p></td>
+          <td>{{ movie.duration }}</td>
+          <td>{{ movie.version }}</td>
+          <td class="text-primary">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Detail
+          </td>
+          <td class="text-primary">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -2,6 +2,7 @@
     background-color: #205081;
     color: #fff;
     align-items: center;
+    max-height: 70px;
 }
 .action{
     align-items: center;
@@ -11,6 +12,9 @@ p{
 }
 .welcome{
     align-items: center;
+}
+.welcome p{
+    cursor: pointer;
 }
 .fa-search{
     color: black;

@@ -1,13 +1,40 @@
-<div class="home p-3">
-  <div class="list d-flex justify-content-between">
- 
-    <div class="item" *ngFor="let movie of listMovie">
-        <h5>Hanh Dong</h5>
-      <div class="box">
-        <img [src]="movie.large_image" alt="" />
+<div class="home ">
+  <div class="wrap-carousel">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)"
+    >
+      <div ngxSlickItem *ngFor="let movie of listMovie" class="slide">
+        <img
+          src="{{ movie.small_image }}"
+          alt=""
+          style="height: 280px; width: 200px; margin: 0 auto"
+        />
       </div>
-      <div class="schedule">
-        <p>View schedule</p>
+    </ngx-slick-carousel>
+  </div>
+
+  <!-- <button (click)="addSlide()">Add</button>
+  <button (click)="removeSlide()">Remove</button>
+  <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+  <button (click)="slickModal.unslick()">unslick</button> -->
+  <app-loader [isLoaded]="isLoaded"></app-loader>
+  <div class="content px-5 mt-3" *ngIf="listMovie">
+   
+    <h5 class="text-white" >Hanh Dong</h5>
+    <div class="list d-flex justify-content-between">
+      <div class="item mr-3" *ngFor="let movie of listMovie" routerLink="booking-seat">
+        <div class="box">
+          <img [src]="movie.small_image" alt="anh nay bi loi" />
+        </div>
+        <div class="schedule">
+          <p>View schedule</p>
+        </div>
       </div>
     </div>
   </div>

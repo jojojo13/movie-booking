@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  scroll-behavior: smooth;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: Bold;
+}
+body{
+  font-family: Medium;
+  color: black;
+  font-weight: lighter;
+}
+.slick-slider {
+  width: 50%;
+  margin-left: auto !important;
+  margin-right: 45px !important;
+  background: transparent;
+  margin-top: auto !important;
+  margin-bottom: auto  !important;
+}
+/* .slick-list{
+    width: 50%;
+    margin-right: 50px !important;
+    margin-left: auto !important;
+}
+.slide img{
+    width: 30%;
+} */
+
+body .slick-prev,
+body .slick-next {
+  height: 45px;
+  width: 40px;
+  background: grey !important;
+  z-index: 100;
+  display: none !important;
+}
+
+.slick-slider .slick-dots li button :before {
+  color: aquamarine !important;
+  width: 200px !important;
+  height: 100px !important;
+}
+.slick-dots li button:before {
+  font-size: 12px !important;
+  color: #fff !important;
+}

@@ -4,16 +4,39 @@ import { MovieServiceService } from 'src/services/movie-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  listMovie:any
-  constructor(private movieService:MovieServiceService) { }
+  listMovie: any;
+  isLoaded=false;
+  constructor(private movieService: MovieServiceService) {}
 
-  ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe((movies)=>{
-      this.listMovie=movies
-    })
+  slideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    // autoplay: true,
+    autoplaySpeed: 1000,
+  };
+
+  slickInit(e: any) {
+    console.log('slick initialized');
   }
-
+  breakpoint(e: any) {
+    console.log('breakpoint');
+  }
+  afterChange(e: any) {
+    console.log('afterChange');
+  }
+  beforeChange(e: any) {
+    console.log('beforeChange');
+  }
+  ngOnInit(): void {
+    this.movieService.getAllMovies().subscribe((movies) => {
+      this.listMovie = movies;
+      this.isLoaded=true
+    
+    });
+  }
 }

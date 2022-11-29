@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { BookingSeatComponent } from './components/booking-seat/booking-seat.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AccountInfoComponent } from './components/account-info/account-info.component';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,9 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
     ListSearchComponent,
     BookingSeatComponent,
     UserProfileComponent,
-    AccountInfoComponent
+    AccountInfoComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
     SlickCarouselModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

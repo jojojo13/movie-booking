@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MovieServiceService {
-  url = 'https://movie-booking-pro.herokuapp.com/api/';
+  url = 'http://localhost:8080/api/movie';
   constructor(private $http: HttpClient) {}
 
   getAllMovies() {
-    return this.$http.get(this.url+'movie');
+    return this.$http.get(this.url);
   }
   getMovieBySearch(keyword: string, index: number, size: number) {
     return this.$http.get(
-      this.url + `search?keyword=${keyword}&index=${index}&size=${size}`
+      this.url + `/search?keyword=${keyword}&index=${index}&size=${size}`
     );
-    
   }
+ 
 }

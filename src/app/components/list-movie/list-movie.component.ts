@@ -8,11 +8,15 @@ import { MovieServiceService } from 'src/services/movie-service.service';
 })
 export class ListMovieComponent implements OnInit {
   listMovie:any
+  isLoaded=false;
   constructor(private movieService:MovieServiceService) { }
 
   ngOnInit(): void {
     this.movieService.getAllMovies().subscribe((response)=>{
       this.listMovie=response
+      this.isLoaded=true
+    },err=>{
+      this.isLoaded=true
     })
   }
 

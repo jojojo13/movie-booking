@@ -1,0 +1,160 @@
+<div>
+  <app-loader [isLoaded]="isLoaded"></app-loader>
+  <div class="wrapper pb-3" style="width: 476px; ">
+    <p class="text-title">REGISTER ACCOUNT</p>
+    <p class="text-danger text-center mb-1" *ngIf="mess">{{mess}}</p> 
+    <form
+      name="form"
+      id="form-submit"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="text"
+          name="username"
+          id="account"
+          class="form-control mb-1"
+          placeholder="Username"
+          formControlName="username"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('username').hasError('required') ">Username is required</small>
+        <small class="text-danger" *ngIf="registerForm.controls['username'].hasError('minlength')">User name must greater than 6 characters</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-control mb-1"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('password').hasError('required') ">Password is required</small>
+        <small class="text-danger" *ngIf="registerForm.controls['password'].hasError('minlength')">Password name must greater than 6 characters</small>
+      </div>
+      
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="password"
+          name="repassword"
+          id="repassword"
+          class="form-control mb-1"
+          placeholder="Confirm password"
+          formControlName="repassword"
+        />
+        <small class="text-danger" *ngIf="registerForm.errors?.mismatch && registerForm.controls['repassword'].touched">Repassword must be matched password</small>
+      
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="text"
+          name="full_name"
+          id="fullName"
+          class="form-control mb-1"
+          placeholder="Full name"
+          formControlName="fullName"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('fullName').hasError('required')">Full name is required</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="date"
+          name="dob"
+          id="dob"
+          class="form-control mb-1"
+          placeholder="Date of birth"
+          formControlName="dateOfBirth"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('dateOfBirth').hasError('required')">Date of birth is required</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <div class="form-check form-check-inline mr-2">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="inlineRadio1"
+            value="1"
+            formControlName="gender"
+          />
+          <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="inlineRadio2"
+            value="0"
+            formControlName="gender"
+          />
+          <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+       <small class="text-danger d-block"  *ngIf="registerForm.get('gender').hasError('required')">Gender is required</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="text"
+          name="identity_card"
+          id="idCard"
+          class="form-control mb-1"
+          placeholder="Identity card"
+          formControlName="identityCard"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('identityCard').hasError('required')">Identity card is required</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="text"
+          name="email"
+          id="email"
+          class="form-control mb-1"
+          placeholder="E-mail"
+          formControlName="email"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('email').hasError('required')">Email card is required</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="text"
+          name="address"
+          id="address"
+          class="form-control mb-1"
+          placeholder="Address"
+          formControlName="address"
+        />
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="text"
+          name="phone_number"
+          id="phone"
+          class="form-control mb-1"
+          placeholder="Phone number"
+          formControlName="phoneNumber"
+        />
+        <small class="text-danger"  *ngIf="registerForm.get('phoneNumber').hasError('required')">Phone is required</small>
+      </div>
+      <button
+        [disabled]="registerForm.invalid"
+        type="submit"
+        class="btn btn-block mb-1 mx-3 p-1"
+        id="acc-btn"
+      >
+        Register
+      </button>
+    
+    </form>
+  </div>
+  <p id="switchLogin">
+    Have account already?
+    <a
+      routerLink="/login"
+      class="text-primary"
+      style="text-decoration: underline"
+      >Login</a
+    >
+  </p>
+</div>
+<div class="overlay"></div>

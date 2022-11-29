@@ -1,0 +1,56 @@
+<div>
+  <app-loader [isLoaded]="isLoaded"></app-loader>
+  <div class="wrapper" style="width: 476px; height: 280px">
+    <p class="text-title">LOGIN</p>
+    <form
+      name="form"
+      id="form-submit"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-group mb-3 mx-3">
+        <input
+          type="text"
+          size="50"
+          name="username"
+          id="username"
+          class="form-control mb-1 pl-2"
+          placeholder="Username"
+          formControlName="username"
+        />
+        <small class="text-danger" *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched" >Please input username</small>
+      </div>
+      <div class="form-group mb-2 mx-3">
+        <input
+          type="password"
+          size="50"
+          name="password"
+          id="password"
+          class="form-control mb-1 pl-2"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <small class="text-danger" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Please input password</small>
+      </div>
+      <p class="text-danger mb-0 mt-0 p-1"><span class="ml-3" *ngIf="message">{{message}}</span></p>
+      <button
+      [disabled]="loginForm.invalid"
+        type="submit"
+        class="btn btn-block acc-btn mb-0 mx-3 mt-0 p-1"
+        id="acc-btn"
+      >
+        <i class="fa-solid fa-right-to-bracket"></i> Login
+      </button>
+    </form>
+  </div>
+  <p id="switchLogin">
+    Don't have an account yet?
+    <a
+    routerLink="/register"
+      class="text-primary"
+      style="text-decoration: underline"
+      >Register now!</a
+    >
+  </p>
+</div>
+<div class="overlay"></div>

@@ -13,4 +13,5 @@ ul li {
 }
 .active {
   font-weight: bolder;
+  background-color: rgb(226, 248, 248);
 }

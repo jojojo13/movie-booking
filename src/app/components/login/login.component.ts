@@ -36,11 +36,13 @@ export class LoginComponent implements OnInit {
           (document?.querySelector('.overlay') as HTMLElement).style.display =
             'none';
           this.isLoaded = true;
+          console.log(response.data)
           if (response.data.role == 'Customer') {
-            this.router.navigateByUrl('/admin');
+            this.router.navigateByUrl('/user');
           } else {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/admin');
           }
+          this.authService.headerSubject.next(true)
         },
         (err) => {
           (document?.querySelector('.overlay') as HTMLElement).style.display =

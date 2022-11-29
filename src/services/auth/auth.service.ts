@@ -10,9 +10,11 @@ export class AuthService {
   public token=localStorage.getItem('token')
   public user: any
   public userSubject: BehaviorSubject<boolean>;
+  public headerSubject: BehaviorSubject<boolean>;
   constructor(private http: HttpClient) {
     this.userSubject = new BehaviorSubject<boolean>(false);
-   
+   this.headerSubject=new BehaviorSubject<boolean>(false);
+ 
   }
 
   login(user: any) {

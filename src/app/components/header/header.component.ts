@@ -12,14 +12,18 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, public auth: AuthService) {}
 
   ngOnInit(): void {
-    if (localStorage.getItem('token') != null) {
-      this.auth.getUserInfo().subscribe((res: any) => {
-        this.auth.user = res;
-        this.auth.userSubject.next(true)
-      });
-    } else {
-      this.auth.user = undefined;
-    }
+    this.auth.headerSubject.subscribe((change)=>{
+      if (localStorage.getItem('token') != null) {
+        this.auth.getUserInfo().subscribe((res: any) => {
+          this.auth.user = res;
+          console.log(res)
+          this.auth.userSubject.next(true)
+        });
+      } else {
+        this.auth.user = undefined;
+      }
+    })
+
   }
   search(text: string) {
     this.router.navigate(['/search'], {
@@ -30,5 +34,6 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigateByUrl('/login');
     this.auth.userSubject.next(true);
+    this.auth.headerSubject.next(true)
   }
 }

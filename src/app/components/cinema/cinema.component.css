@@ -1,0 +1,91 @@
+.title {
+    border-bottom: 5px solid #f5f5f5;
+  }
+  .contain {
+    box-shadow: 0px 0px 2px gray;
+    position: relative;
+  }
+  .wrap {
+    background-color: #fff;
+    padding: 20px;
+  }
+  .title{
+    background-color: #fff;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: #eff0f3;
+  }
+  thead tr {
+    border-top: none;
+  }
+  table {
+    border: none;
+  }
+  table td{
+    vertical-align: middle;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .fa-plus {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0 0 2px #888;
+    padding: 0.2em 0.3em;
+    background-color: #fff;
+    color: blue;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  button {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  tbody td {
+    font-size: 12px;
+    padding: 8px;
+    text-align: center;
+  }
+  thead th {
+    padding: 5px;
+    width: 120px;
+    text-align: center;
+  }
+  thead th:first-child {
+    width: 50px;
+  }
+  tbody th {
+    font-size: 12px;
+    width: 180px;
+    padding: 3px;
+  }
+  thead th:nth-child(5) {
+    width: 200px;
+  }
+  thead th:last-child{
+      width: 50px;
+  }
+  tbody tr{
+    cursor: pointer;
+  }
+  tbody tr:hover{
+    background-color: #E2F8F8;
+  }
+  /* thead th:nth-child(2) {
+    width: 160px;
+  }
+  thead th:nth-child(4) {
+    width: 160px;
+  } */
+  td p {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .paging{
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+  }

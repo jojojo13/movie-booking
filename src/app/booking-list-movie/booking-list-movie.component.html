@@ -1,0 +1,53 @@
+<div class="wrapper" style=" margin-bottom: 0px; position: relative;">
+  <h5 class="text-center m-0 py-3">Booking List</h5>
+    <hr/>
+    <div class="m-3"> 
+      <div style="display: flex; justify-content: end; align-items: center; margin-bottom: 50px;" class="text-tb">
+        <div style="display: flex; justify-content: space-between;">
+            <label for="search" style="margin-right: 10px;">Search:</label>
+            <input type="text" id="search" name="search" style="width: 250px; border-radius: 7px; border: 1px solid #BEC8CF;">
+          </div>
+      </div>
+      <table class="table table-striped" style="font-size: 13px;">
+        <thead>
+          <tr>
+            <th scope="col" class="text-tb" style="border-top: none;">#</th>
+            <th scope="col" class="text-tb" style="border-top: none;">Booking ID</th>
+            <th scope="col" class="text-tb" style="border-top: none;">Member ID</th>
+            <th scope="col" class="text-tb" style="border-top: none; width: 160px;">Full name</th>
+            <th scope="col" class="text-tb" style="border-top: none;">Identity card</th>
+            <th scope="col" class="text-tb" style="border-top: none;">Phone number</th>
+            <th scope="col" class="text-tb" style="border-top: none; width: 160px;">Movie</th>
+            <th scope="col" class="text-tb" style="border-top: none;">Time</th>
+            <th scope="col" class="text-tb" style="border-top: none;">Seat</th>
+            <th scope="col" style="border-top: none;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of listTicket;let i=index">
+            <td>{{i+1}}</td>
+            <td scope="row">{{ticket.ticketId}}</td>
+            <td>{{ticket.accountId}}</td>
+            <td>{{ticket.fullName }}</td>
+            <td>@{{ticket.identityCard}}</td>
+            <td>{{ticket.phoneNumber}}</td>
+            <td>{{ticket.movieNameVN}}</td>
+            <td>{{ticket.time}}</td>
+            <td>{{ticket.seat}}</td>
+            <td class="text-primary ">
+                <p class="p-2 booked">Successful booking</p>
+            </td>
+          </tr>
+     
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example" style="position: absolute; right: 15px; margin-top: 25px;">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link btn-primary" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+
+</div>

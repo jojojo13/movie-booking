@@ -1,0 +1,59 @@
+<div class="contain d-flex">
+  <ng-container *ngIf="movie">
+    <div class="imgBox">
+      <img [src]="movie.small_image" alt="" />
+      <div class="movie-details-prime">
+        <ul>
+          <li class="watch" (click)="showIframe()">
+            <a class="btn popup-video"
+              ><i class="fa fa-play" aria-hidden="true"></i> Watch Trailer</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="ml-5 content pt-3">
+      <h4 class="subTtl">New Episodes</h4>
+      <h2 class="ttl">{{ movie.movie_name_vn }}</h2>
+      <div class="banner-meta">
+        <ul>
+          <li class="quality">
+            <span>Pg 18</span>
+            <span>hd</span>
+          </li>
+          <li class="category">
+            <a *ngFor="let type of movie.types">{{ type.typeName }}</a>
+          </li>
+          <li class="release-time">
+            <!-- <span><i class="fa fa-calendar" aria-hidden="true"></i> 2021</span> -->
+            <span class="ml-3"
+              ><i class="fa fa-clock-o" aria-hidden="true"></i>
+              {{ movie.duration }} hours</span
+            >
+          </li>
+        </ul>
+      </div>
+      <p class="text-white">{{ movie.content }}</p>
+
+      <h5 class="showTimes">Show times</h5>
+      <div class="d-flex text-white times" *ngFor="let s of movie.scheduleMovies">
+        <div class="date">
+          <p class="mb-0">{{s.date}}</p>
+        </div>
+        <div class="timeOfDate">
+          <span  (click)="bookingSeat(s.scheduleMovieId,movie,s.schedule.scheduleTime,s.date)">{{s.schedule.scheduleTime}}</span>
+         
+        </div>
+      </div>
+    </div>
+    <iframe
+      width="1300"
+      height="600"
+      class="hide"
+      id="iframe"
+      [src]="dangerRousURL"
+    >
+    </iframe>
+  </ng-container>
+  <div class="overlay"></div>
+</div>

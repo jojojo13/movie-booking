@@ -10,7 +10,7 @@
         style="height: 96px"
       />
     </div>
-    <form name="form" id="form-submit" [formGroup]="updatedForm" >
+    <form name="form" id="form-submit" [formGroup]="updatedForm" (ngSubmit)="onSubmit()" >
       <div class="form-group mb-2 mx-3">
         <input
           type="text"
@@ -18,6 +18,7 @@
           id="account"
           class="form-control mb-1"
           placeholder="Username"
+          [disabled]="true"
           formControlName="username"
         />
         <small
@@ -120,7 +121,7 @@
             id="inlineRadio2"
             value="0"
             formControlName="gender"
-            [checked]="true"
+            
           />
           <label class="form-check-label" for="inlineRadio2">Female</label>
         </div>
@@ -191,7 +192,7 @@
         <input type="file" id="image" name="image" />
       </div>
       <div class="mx-3">
-        <button type="submit" class="btn btn-block mx-2 mt-1 btn-common">
+        <button [disabled]="updatedForm.invalid" type="submit" class="btn btn-block mx-2 mt-1 btn-common">
           <i class="fa fa-check mr-2" aria-hidden="true"></i>Save
         </button>
         <button type="submit" class="btn btn-block mx-2 mt-1 btn-common">

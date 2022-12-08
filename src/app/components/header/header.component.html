@@ -4,8 +4,8 @@
       <img src="../../../assets/logo.png" alt="" />
     </div>
     <div class="action d-flex">
-      <p class="mx-4">Showtime</p>
-      <p class="mx-4">Movies</p>
+      <p class="mx-4" routerLink="show-time">Showtime</p>
+      <p class="mx-4" routerLink="/admin/movie">Movies</p>
       <div class="box">
         <input type="text" name="searchTxt" [(ngModel)]="searchTxt" />
         <i class="fa fa-search" aria-hidden="true" (click)="search(searchTxt)"></i>

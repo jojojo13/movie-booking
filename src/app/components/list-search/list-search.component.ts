@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieServiceService } from 'src/services/movie-service.service';
 
 @Component({
@@ -17,7 +17,8 @@ export class ListSearchComponent implements OnInit {
   isEmpty = false;
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieServiceService
+    private movieService: MovieServiceService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -51,5 +52,8 @@ export class ListSearchComponent implements OnInit {
           console.log(err);
         }
       );
+  }
+  navigateTo(movieID:number){
+    this.router.navigate([`/movie-detail`],{ queryParams: { movieID: `${movieID}`} })
   }
 }

@@ -4,7 +4,10 @@
     <h5 class="text-center m-0">Movie List</h5>
   </div>
   <div class="wrap">
-    <button class="btn btn-primary font-weight-bold px-4" routerLink="/movie-booking/add">
+    <button
+      class="btn btn-primary font-weight-bold px-4"
+      routerLink="/admin/add"
+    >
       <i class="fa fa-plus" aria-hidden="true"></i>Add new
     </button>
     <table class="table mt-4">
@@ -22,13 +25,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let movie of listMovie; let i = index">
+        <tr
+          *ngFor="
+            let movie of listMovie
+              | paginate
+                : {
+                    itemsPerPage: itemsPerPage,
+                    currentPage: page,
+                    totalItems: totalItems
+                  };
+            let i = index
+          "
+        >
           <td scope="row">{{ i + 1 }}</td>
           <td>{{ movie.movie_name_english }}</td>
           <td>{{ movie.movie_name_vn }}</td>
           <td>{{ movie.from_date }}</td>
-          <td><p>{{ movie.movie_production_company }}</p></td>
-          <td>{{ movie.duration }}</td>
+          <td>
+            <p>{{ movie.movie_production_company }}</p>
+          </td>
+          <td>{{ movie.duration }} hours</td>
           <td>{{ movie.version }}</td>
           <td class="text-primary">
             <i class="fa fa-info-circle" aria-hidden="true"></i> Detail
@@ -40,4 +56,9 @@
       </tbody>
     </table>
   </div>
+  <pagination-controls
+  class="paging"
+  (pageChange)="gty((page = $event))"
+  ></pagination-controls>
 </div>
+

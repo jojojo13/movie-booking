@@ -1,0 +1,45 @@
+<div class="contain">
+    <app-loader [isLoaded]="isLoaded"></app-loader>
+    <div class="title py-3">
+      <h5 class="text-center m-0">Cinema Room</h5>
+    </div>
+    <div class="wrap">
+      <button class="btn btn-primary font-weight-bold px-4" routerLink="/admin/add">
+        <i class="fa fa-plus" aria-hidden="true"></i>Add new
+      </button>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cinema Room ID</th>
+            <th scope="col">Cinema Room</th>
+            <th scope="col">Seat quantity</th>
+            <th>Seat detail</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cinema of listCinema| paginate
+          : {
+              itemsPerPage: itemsPerPage,
+              currentPage: page,
+              totalItems: totalItems
+            }; let i = index" (click)="naigateTo(cinema.cinemaRoomId)">
+            <td scope="row">{{ i + 1 }}</td>
+            <td>{{ cinema.cinemaRoomId}}</td>
+            <td>{{ cinema.cinemaRoomName }}</td>    
+            <td>60</td>   
+            <td class="text-primary">
+              <i class="fa fa-info-circle" aria-hidden="true"></i> Seat detail
+            </td>
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls
+    class="paging"
+    (pageChange)="gty((page = $event))"
+    ></pagination-controls>
+  </div>
+  

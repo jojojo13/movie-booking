@@ -1,0 +1,148 @@
+.contain {
+    width: 100%;
+    
+    background-color: none;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Medium;
+    /* background-color: rgb(207, 201, 201); */
+  }
+  h3{
+      font-family: BoldItalic;
+  }
+  p{
+      font-family: LightItalic;
+  }
+  span{
+      font-family: SemiBold;
+  }
+  .booking {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.78);
+    padding: 30px;
+  }
+  .seats {
+    justify-content: space-between;
+    padding: 5px;
+    align-items: baseline;
+
+  }
+  .seat-left,
+  .seat-right {
+    width: 40%;
+  }
+  .seat {
+    width: 35px;
+    background-color: aquamarine;
+    margin: 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #949494;
+    color: #fff;
+    cursor: pointer;
+  }
+  .seat p {
+    margin-bottom: 0;
+  }
+  .movie-detail p span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #d88a04;
+    width: 70px;
+    display: inline-block;
+  }
+  .movie-detail p {
+    font-weight: 600;
+  }
+  .bookBtn {
+    display: block;
+    margin: 16px 0 22px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: #d88a04;
+    padding: 7px 11px;
+    color: #fff;
+    outline: none;
+  }
+  ul.seatCharts-legendList {
+    padding-left: 0px;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ol,
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  span.seatCharts-legendDescription {
+    margin-left: 5px;
+    line-height: 30px;
+  }
+  div.seatCharts-seat.available {
+    background-color: #949494;
+    cursor: pointer;
+  }
+  div.seatCharts-seat.unavailable {
+    background-color: #d00000;
+    cursor: not-allowed;
+  }
+  div.seatCharts-seat.selected {
+    background-color: #00b70c;
+    cursor: pointer;
+  }
+  .seatCharts-legendItem {
+    display: flex;
+    align-items: center;
+  }
+  div.seatCharts-cell {
+    height: 29px;
+    width: 29px;
+  
+    margin: 6px 3px 6px 0;
+  
+    text-align: center;
+    outline: none;
+    font-size: 13px;
+  }
+  .unavailable {
+    background-color: #d00000;
+    cursor: not-allowed;
+  }
+  .selected {
+    background-color: #00b70c !important;
+    cursor: pointer;
+  }
+  .available {
+    background-color: #949494;
+    cursor: pointer;
+  }
+  .vip{
+    background-color: #2162db;
+    cursor: pointer;
+  }
+  .booking-seat{
+    /* align-items: center; */
+  
+  }
+  li{
+    margin: 40px 0 20px 20px;
+  }
+  .seats{
+    display: flex;
+    justify-content: space-between;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+  }
+  

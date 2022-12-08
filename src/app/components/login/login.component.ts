@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           (document?.querySelector('.overlay') as HTMLElement).style.display =
             'none';
           this.isLoaded = true;
-          console.log(response.data)
+           this.authService.user=response.data
           if (response.data.role == 'Customer') {
             this.router.navigateByUrl('/user');
           } else {

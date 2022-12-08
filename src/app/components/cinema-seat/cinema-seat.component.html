@@ -1,0 +1,31 @@
+<div class="contain">
+    <div class="booking">
+      <h3 class="font-weight-bold text-center p-4">Cinema Room {{cinemaID}}</h3>
+      <div class="booking-seat d-flex flex-column">
+        <div class="seats justify-content-between d-flex">
+          <div class="seat-left d-flex flex-wrap">
+            <div class="seat" [ngClass]="{'vip':seat.seatType==1}" (click)="toggleClass($event, 'vip',seat)" *ngFor="let seat of listSeatLeft">{{seat.seatColume}}{{seat.seatRow}}</div> 
+          </div>
+          <div class="seat-right d-flex flex-wrap">
+            <div class="seat" [ngClass]="{'vip':seat.seatType==1}" (click)="toggleClass($event, 'vip',seat)" *ngFor="let seat of listSeatRight">{{seat.seatColume}}{{seat.seatRow}}</div> 
+        </div>
+       
+      </div>
+      <div class="detail">
+    
+        <ul class="seatCharts-legendList d-flex">
+          <li class="seatCharts-legendItem">
+            <div class="seatCharts-seat seatCharts-cell available"></div>
+            <span class="seatCharts-legendDescription">Normal</span>
+          </li>
+
+          <li class="seatCharts-legendItem">
+            <div class="seatCharts-seat seatCharts-cell vip"></div>
+            <span class="seatCharts-legendDescription">VIP</span>
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-primary" (click)="updateSeat()">Update</button>
+    </div>
+  </div>
+  

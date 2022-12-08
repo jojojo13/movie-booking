@@ -1,0 +1,74 @@
+<div class="contain-all py-5">
+  <div class="confirm-text">
+    <div class="text-showtime">
+      <p>SHOWTIMES</p>
+    </div>
+
+    <div class="schedule" style="margin-bottom: 30px">
+      <div
+        class="container "
+        style="display: flex; justify-content: space-between"
+      >
+        <div
+          [ngClass]="{ active: clickedTime == i }"
+          class="rounded-circle round-photo s"
+          *ngFor="let showTime of showTimeDays; let i = index"
+          (click)="getMovieByShowTime(showTime, i)"
+        >
+          <div class="number">{{ showTime.getDate() }}</div>
+          <div class="date">{{ weekday[showTime.getDay()] }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-list">
+    <div class="container" style="background-color: #ffffff" >
+      <h1 *ngIf="msg" style="text-align: center;font-size: 30px;
+      padding: 40px 0;">{{msg}}</h1>
+      <ng-container *ngIf="listMovie">
+        <div class="container p-4" *ngFor="let movie of listMovie">
+          <div class="row">
+            <div class="col-2 px-0 contain-image">
+              <div class="image">
+                <img [src]="movie.small_image" />
+              </div>
+            </div>
+  
+            <div class="col-10 content-two-table">
+              <div class="content">
+                <div class="title-1">
+                  <p class="p1" (click)="navigateToDetail(movie.scheduleTimeDTO[0].movieId)">{{ movie.movie_name_vn }}</p>
+                </div>
+  
+                <div class="title-2">
+                  <p class="p2">{{ movie.movie_name_english }}</p>
+                </div>
+  
+                <div class="table-2">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    style="
+                      border: dotted 2px;
+                      color: #000000;
+                      background-color: #bec8cf;
+                    "
+                    *ngFor="let schedule of movie.scheduleTimeDTO"
+                    (click)="bookingSeat(schedule.scheduleMovieId,movie,schedule.scheduleTime)"
+                  >
+                    {{ schedule.scheduleTime }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    
+
+
+   
+    </div>
+  </div>
+</div>

@@ -1,7 +1,13 @@
 <div>
-  <div class="wrapper" style="width: 750px; height: 1450px; margin-bottom: 0px">
+  <app-loader [isLoaded]="isLoaded"></app-loader>
+  <div class="wrapper" style="width: 750px; margin-bottom: 0px">
     <p class="text-title">Add Movie</p>
-    <form name="form" id="form-submit" action="#">
+    <form
+      name="form"
+      id="form-submit"
+      [formGroup]="addMovieForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="eng"
           >Movie name (ENG):<span id="start"> *</span></label
@@ -11,8 +17,13 @@
           id="eng"
           class="form-control mb-1"
           placeholder="Movie name (ENG)"
-          required
+          formControlName="movie_name_english"
         />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('movie_name_english').hasError('required')"
+          >Please input this field</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="vn"
@@ -23,20 +34,45 @@
           id="vn"
           class="form-control mb-1"
           placeholder="Movie name (VN)"
-          required
+          formControlName="movie_name_vn"
         />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('movie_name_vn').hasError('required')"
+          >Please input this field</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="fromDate"
           >From date:<span id="start"> *</span></label
         >
-        <input type="date" id="fromDate" class="form-control mb-1" required />
+        <input
+          type="date"
+          id="fromDate"
+          class="form-control mb-1"
+          formControlName="from_date"
+        />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('from_date').hasError('required')"
+          >Please input this field</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="toDate"
           >To date:<span id="start"> *</span></label
         >
-        <input type="date" id="toDate" class="form-control mb-1" required />
+        <input
+          type="date"
+          id="toDate"
+          class="form-control mb-1"
+          formControlName="to_date"
+        />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('to_date').hasError('required')"
+          >Please input this field</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="actor"
@@ -47,19 +83,24 @@
           id="actor"
           class="form-control mb-1"
           placeholder="Actor"
-          required
+          formControlName="actor"
         />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('actor').hasError('required')"
+          >Please input this field</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="company"
-          >Movie Production Company:<span id="start"> *</span></label
+          >Movie Production Company:</label
         >
         <input
           type="text"
           id="company"
           class="form-control mb-1"
           placeholder="Movie Production Company"
-          required
+          formControlName="movie_production_company"
         />
       </div>
       <div class="form-group mb-3">
@@ -71,8 +112,13 @@
           id="director"
           class="form-control mb-1"
           placeholder="Director"
-          required
+          formControlName="director"
         />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('director').hasError('required')"
+          >Please input this field</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="duration"
@@ -83,8 +129,18 @@
           id="duration"
           class="form-control mb-1"
           placeholder="Duration"
-          required
+          formControlName="duration"
         />
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('duration').hasError('required')"
+          >Please input this field</small
+        >
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('duration').hasError('pattern')"
+          >Please input number only</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="version"
@@ -95,7 +151,7 @@
           id="version"
           class="form-control mb-1"
           placeholder="Version"
-          required
+          formControlName="version"
         />
       </div>
       <div class="form-group mb-3">
@@ -105,306 +161,77 @@
           style="display: block; margin-bottom: 15px"
           >Type:<span id="start"> *</span></label
         >
-        <div class="row">
-          <div class="col-3">
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineCheckbox1"
-                >Hành động</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineCheckbox2"
-                >Hài Hước</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox3"
-                >Lãng mạng</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox4"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox4"
-                >Tình cảm</label
-              >
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineCheckbox1"
-                >Hài hước</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineCheckbox2"
-                >Chiến tranh</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox3"
-                >Phiêu lưu</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox4"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox4"
-                >Tình cảm</label
-              >
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineCheckbox1"
-                >Lãng mạng</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineCheckbox2"
-                >Kiếm hiệp</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox3"
-                >Tâm lý 18+</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox4"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox4"
-                >Tình cảm</label
-              >
-            </div>
+        <div class="row" formArrayName="types">
+          <div
+            class="form-check form-check-inline d-block type"
+            *ngFor="let type of types"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [id]="type.typeId"
+              [value]="type.typeId"
+              (change)="checkValueType($event, type.typeId)"
+            />
+            <label class="form-check-label" [for]="type.typeId">{{
+              type.typeName
+            }}</label>
           </div>
         </div>
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('types').hasError('required')"
+          >Please select types</small
+        >
       </div>
-      <div class="form-group mb-3">
+      <div class="form-group mb-3 cinemaroom">
         <label for="exampleFormControlSelect1"
           >Cinema room:<span id="start"> *</span></label
         >
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <select
+          class="form-control"
+          id="exampleFormControlSelect1"
+          formControlName="cinemaRoom"
+        >
+          <option *ngFor="let room of cinemaRooms" [value]="room.cinemaRoomId">
+            {{ room.cinemaRoomName }}
+          </option>
         </select>
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('cinemaRoom').hasError('required')"
+          >Please choose cinema room</small
+        >
       </div>
-      <div class="form-group mb-3">
+      <div class="form-group mb-1">
         <label
           class="form-check-label lb-text"
           for="type"
           style="display: block; margin-bottom: 15px"
           >Schedule:<span id="start"> *</span></label
         >
-        <div class="row">
-          <div class="col-3">
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineCheckbox1"
-                >08:00</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineCheckbox2"
-                >09:00</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox3"
-                >10:00</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox4"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox4"
-                >11:00</label
-              >
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineCheckbox1"
-                >13:30</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineCheckbox2"
-                >14:30</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox3"
-                >15:30</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox4"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox4"
-                >17:30</label
-              >
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineCheckbox1"
-                >18:30</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineCheckbox2"
-                >19:00</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox3"
-                >20:00</label
-              >
-            </div>
-            <div class="form-check form-check-inline d-block">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox4"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineCheckbox4"
-                >21:00</label
-              >
-            </div>
+        <div class="row" formArrayName="schedules">
+          <div
+            class="form-check form-check-inline d-block mr-3"
+            *ngFor="let schedule of schedules"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              #target
+              [value]="schedule.scheduleId"
+              (change)="checkValue($event, schedule.scheduleId)"
+            />
+            <label class="form-check-label" for="inlineCheckbox1">{{
+              schedule.scheduleTime
+            }}</label>
           </div>
         </div>
+        <small
+          class="text-danger"
+          *ngIf="addMovieForm.get('schedules').hasError('required')"
+          >Please select schedule</small
+        >
       </div>
       <div class="form-group mb-3">
         <label class="form-check-label lb-text" for="Content"
@@ -415,14 +242,35 @@
           id="Content"
           rows="2"
           placeholder="Content"
+          formControlName="content"
         ></textarea>
       </div>
       <div class="form-group mb-3">
         <label for="image">Image:<span id="start"> *</span></label>
         <br />
-        <input type="file" id="image" name="image" />
+        <input
+          type="file"
+          id="image"
+          name="image"
+          (change)="selectFile($event)"
+        />
       </div>
-      <button type="submit" class="btn btn-block mb-1 mx-3" id="btn-common">
+      <div class="form-group mb-3">
+        <label for="video">Trailer:<span id="start"> *</span></label>
+        <br />
+        <input
+          type="file"
+          id="video"
+          name="video"
+          (change)="selectFile2($event)"
+        />
+      </div>
+      <button
+        [disabled]="addMovieForm.invalid"
+        type="submit"
+        class="btn btn-block mb-1 mx-3"
+        id="btn-common"
+      >
         <i class="fa fa-check" aria-hidden="true"></i>
         Save
       </button>
@@ -432,3 +280,4 @@
     </form>
   </div>
 </div>
+<div class="overlay"></div>

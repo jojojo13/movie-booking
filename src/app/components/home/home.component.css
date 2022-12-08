@@ -5,6 +5,7 @@
     rgba(34, 193, 195, 1) 0%,
     rgba(149, 45, 253, 1) 84%
   );
+  height: calc(100vh - 62px);
 }
 .box {
   width: 155px;

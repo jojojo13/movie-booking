@@ -26,3 +26,9 @@ p{
 .box{
     position: relative;
 }
+.logo{
+    cursor: pointer;
+}
+.action p{
+    cursor: pointer;
+}

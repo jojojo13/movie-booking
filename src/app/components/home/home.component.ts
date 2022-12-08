@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieServiceService } from 'src/services/movie-service.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { MovieServiceService } from 'src/services/movie-service.service';
 export class HomeComponent implements OnInit {
   listMovie: any;
   isLoaded=false;
-  constructor(private movieService: MovieServiceService) {}
+  constructor(private movieService: MovieServiceService,private router:Router) {}
 
   slideConfig = {
     slidesToShow: 3,
@@ -33,10 +34,13 @@ export class HomeComponent implements OnInit {
     console.log('beforeChange');
   }
   ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe((movies) => {
-      this.listMovie = movies;
+    this.movieService.getAllMovies(0,999999999).subscribe((response:any) => {
+      this.listMovie = response.movie;
       this.isLoaded=true
     
     });
+  }
+  navigateTo(movieID:number){
+    this.router.navigate([`/movie-detail`],{ queryParams: { movieID: `${movieID}`} })
   }
 }

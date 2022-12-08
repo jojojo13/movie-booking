@@ -1,0 +1,81 @@
+<div
+  class="wrapper"
+  style="width: 1050px; margin-bottom: 0px; position: relative"
+>
+  <h3 class="text-title text-center p-3 text-tb">Booked ticket</h3>
+  <hr />
+  <div class="m-3">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      "
+      class="text-tb"
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <label for="inputState" style="margin-right: 10px">Show </label>
+        <select id="inputState" class="form-control">
+          <option selected>10</option>
+          <option>2</option>
+        </select>
+        <label for="inputState" style="margin-left: 10px">enties</label>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <label for="search" style="margin-right: 10px">Search:</label>
+        <input
+          type="text"
+          id="search"
+          name="search"
+          style="width: 250px; border-radius: 7px; border: 1px solid #bec8cf"
+        />
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-tb" style="border-top: none">#</th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            MOVIE NAME
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            BOOKING DATE
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            TOTAL AMOUNT
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of listBooking; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ booking.movieName }}</td>
+          <td>{{ booking.bookingDate }}</td>
+          <td>{{ booking.price }}</td>
+          <td class="text-primary" *ngIf="booking.status==0">Waiting for ticket</td>
+          <td class="text-primary" *ngIf="booking.status==1||booking.status==undefined">Got the ticket</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <nav
+      aria-label="Page navigation example"
+      style="position: absolute; right: 15px; margin-top: 25px"
+    >
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item">
+          <a class="page-link btn-primary" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav> -->
+  </div>
+</div>

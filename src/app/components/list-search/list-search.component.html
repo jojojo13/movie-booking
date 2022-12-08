@@ -18,11 +18,11 @@
                 }
         "
       >
-        <div class="box">
+        <div class="box" (click)="navigateTo(movie.movieId)">
           <img [src]="movie.small_image" alt="anh nay bi loi" />
         </div>
         <div class="schedule">
-          <p class="mb-0">View schedule</p>
+          <p (click)="navigateTo(movie.movieId)" class="mb-0">View schedule</p>
         </div>
       </div>
     </div>

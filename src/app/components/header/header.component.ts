@@ -12,11 +12,12 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, public auth: AuthService) {}
 
   ngOnInit(): void {
+   
     this.auth.headerSubject.subscribe((change)=>{
       if (localStorage.getItem('token') != null) {
         this.auth.getUserInfo().subscribe((res: any) => {
           this.auth.user = res;
-          console.log(res)
+        
           this.auth.userSubject.next(true)
         });
       } else {

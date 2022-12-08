@@ -1,0 +1,92 @@
+<div
+  class="wrapper"
+  style="width: 96%; margin-bottom: 0px; position: relative;background-color: #fff;"
+>
+  <h5 class="text-title text-center py-3 text-tb">Employee list</h5>
+  <hr />
+  <div class="m-3">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+      class="text-tb"
+    >
+      <button type="submit" class="btn btn-block mx-1" id="add-btn">
+        <i class="fa-solid fa-circle-plus"></i> Add new
+      </button>
+      <div style="display: flex; justify-content: space-between">
+        <label for="search" style="margin-right: 10px">Search:</label>
+        <input
+          type="text"
+          id="search"
+          name="search"
+          style="width: 250px; border-radius: 7px; border: 1px solid #bec8cf"
+        />
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-tb" style="border-top: none">#</th>
+          <th scope="col" class="text-tb" style="border-top: none">Usename</th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            Full name
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            Date of birth
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">Gender</th>
+          <th scope="col" class="text-tb" style="border-top: none">Email</th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            Identity card
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            Phone number
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">Address</th>
+          <th scope="col" class="text-tb" style="border-top: none">
+            Register date
+          </th>
+          <th scope="col" class="text-tb" style="border-top: none">Edit</th>
+          <th scope="col" class="text-tb" style="border-top: none">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of listEmployee | paginate
+        : {
+            itemsPerPage: itemsPerPage,
+            currentPage: page,
+            totalItems: totalItems
+          };
+    let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{employee.username}}</td>
+          <td>{{employee.fullName}}</td>
+          <td>{{employee.dateOfBirth}}</td>
+          <td *ngIf="employee.gender==1">Male</td>
+          <td *ngIf="employee.gender==0">Female</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.identityCard}}</td>
+          <td>{{employee.phoneNumber}}</td>
+          <td>{{employee.address}}</td>
+          <td>{{employee.registerDate}}</td>
+          <td class="text-primary">
+            <i (click)="navigateToEdit(employee.accountId)" class="fa fa-pencil" aria-hidden="true"></i>
+          </td>
+          <td class="text-primary">
+            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+          </td>
+        </tr>
+    
+      </tbody>
+    </table>
+    <pagination-controls
+    class="paging"
+    (pageChange)="gty((page = $event))"
+  ></pagination-controls>
+  </div>
+  
+</div>

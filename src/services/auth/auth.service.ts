@@ -1,20 +1,19 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   url = 'http://localhost:8080/api/auth';
-  public token=localStorage.getItem('token')
-  public user: any
+  public token = localStorage.getItem('token');
+  public user: any;
   public userSubject: BehaviorSubject<boolean>;
   public headerSubject: BehaviorSubject<boolean>;
   constructor(private http: HttpClient) {
     this.userSubject = new BehaviorSubject<boolean>(false);
-   this.headerSubject=new BehaviorSubject<boolean>(false);
- 
+    this.headerSubject = new BehaviorSubject<boolean>(false);
   }
 
   login(user: any) {
@@ -32,4 +31,5 @@ export class AuthService {
     };
     return this.http.get(this.url + '/userInfo', httpOptions1);
   }
+
 }

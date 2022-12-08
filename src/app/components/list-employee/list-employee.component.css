@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px gray;
+  }
+
+  #add-btn {
+    color: white;
+    background-color: #337AB7;
+    width: 120px;
+    font-weight: 700;
+    height: 40px;
+  }
+
+  .text-tb{
+    font-weight: 630; 
+ 
+  }
+  tr th:nth-child(3){
+    width: 160px;
+  }
+  tr th:nth-child(6){
+    width: 160px;
+  }
+  tr td,tr th{
+    vertical-align: middle;
+    text-align: center  ;
+  }
+  .paging{
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+  }
+  tbody tr:hover{
+    background-color: #E2F8F8;
+  }
+  i{
+    cursor: pointer;
+  }

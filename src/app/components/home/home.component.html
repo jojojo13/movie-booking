@@ -28,7 +28,7 @@
    
     <h5 class="text-white" >Hanh Dong</h5>
     <div class="list d-flex justify-content-between">
-      <div class="item mr-3" *ngFor="let movie of listMovie" routerLink="booking-seat">
+      <div class="item mr-3" *ngFor="let movie of listMovie" routerLink="booking-seat" (click)="navigateTo(movie.movieId)">
         <div class="box">
           <img [src]="movie.small_image" alt="anh nay bi loi" />
         </div>

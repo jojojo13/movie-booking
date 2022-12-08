@@ -1,0 +1,183 @@
+<div class="contain-all">
+  <div class="confirm-text">
+    <p>CONFIRM BOOKING TICKET</p>
+  </div>
+
+  <div class="container " style="width: auto;position: relative;">
+    <div class="row">
+      <div class="col-2" style="background-color: #ffffff">
+        <div
+          class="image"
+          style="
+            width: 160px;
+            height: 239px;
+            background-color: black;
+            margin-left: 15px;
+            margin-top: 65px;
+          "
+        >
+          <img
+            [src]="movieService.selectedMovie.small_image"
+            height="100%"
+            width="100%"
+          />
+        </div>
+      </div>
+
+      <div class="col-10" style="background-color: #ffffff">
+        <div class="content" style="margin-top: 65px">
+          <div class="title-1">
+            <p class="p1">{{movieService.selectedMovie.movie_name_vn}}</p>
+          </div>
+          <div class="table-1">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="text-topic" style="border-top: none">
+                    Cinema Room:
+                  </td>
+                  <td class="topic-content" style="border-top: none">{{cinemaRoomService.selectedCinemaRoom.cinemaRoomName}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Date:</td>
+                  <td class="topic-content">{{movieService.selectedDate}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Time:</td>
+                  <td class="topic-content">{{movieService.selectedTime}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Seat:</td>
+                  <td class="topic-content" >
+                    <span *ngFor="let seat of movieService.selectedSeat">  {{seat.seatColume}}{{seat.seatRow}}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Price:</td>
+                  <td class="topic-content" >
+                   <p *ngFor="let seat of movieService.selectedSeat"> {{seat.seatColume}}{{seat.seatRow}} : <span *ngIf="seat.seatType==0">70.000</span>
+                    <span *ngIf="seat.seatType==1">150.000</span></p> 
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Total:</td>
+                  <td style="color: #057a1f" class="topic-content">{{movieService.totalPrice}}.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- <div class="title-2">
+            <p class="p2">Member Information</p>
+          </div>
+
+          <div class="search">
+            <nav class="navbar navbar-light bg">
+              <form class="form-inline">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="SV7FFuDw"
+                  aria-label="Search"
+                  style="
+                    border-radius: 10px;
+                    width: 555px;
+                    background-color: #fffdc8;
+                  "
+                />
+                <button
+                  class="btn"
+                  type="submit"
+                  style="
+                    border-radius: 10px;
+                    background-color: #337ab7;
+                    color: #ffffff;
+                  "
+                >
+                  Check
+                </button>
+              </form>
+            </nav>
+          </div>
+
+          <div class="table-2">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="text-topic" style="border-top: none">
+                    Member ID:
+                  </td>
+                  <td class="topic-content" style="border-top: none">
+                    SV7FFuDw
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Full name:</td>
+                  <td class="topic-content">Admin</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Identity card:</td>
+                  <td class="topic-content">987654321</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Phone number:</td>
+                  <td class="topic-content">00000000</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Score:</td>
+                  <td style="color: #057a1f" class="topic-content">190.000</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">
+                    Convert to ticket :
+                    <p style="color: red">*</p>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          name="optradio"
+                        />Agree
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          name="optradio"
+                        />Disagree
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    
+  <div class="wrap">
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="  background-color: #337ab7; color: #ffffff"
+      (click)="bookSeat()"
+    >
+      Confirm Booking Ticket
+    </button>
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      style="background-color: #337ab7; color: #ffffff; width: 150px"
+    >
+      X Back
+    </button> -->
+  </div>
+  </div>
+
+</div>
+<div class="overlay"></div>

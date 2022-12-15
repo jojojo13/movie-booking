@@ -23,10 +23,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = this.fb.group(
       {
-        username: ['', [Validators.required, Validators.minLength(6)]],
-        password: ['', [Validators.required, Validators.minLength(6)]],
+        username: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(12)]],
+        password: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(12)]],
         repassword: ['', [Validators.required, Validators.minLength(6)]],
-        fullName: ['', Validators.required],
+        fullName: ['', [Validators.required,Validators.maxLength(40)]],
         dateOfBirth: ['', Validators.required],
         gender: ['', [Validators.required]],
         identityCard: ['', [Validators.required]],
@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Something went wrong!',
+            text: err.error.message,
           });
         }
       );

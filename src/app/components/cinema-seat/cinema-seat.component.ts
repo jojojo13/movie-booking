@@ -56,7 +56,6 @@ export class CinemaSeatComponent implements OnInit {
         this.renderer.addClass(event.target, className);
       }
     }
-    console.log(this.selectedSeat)
   
   }
   updateSeat(){

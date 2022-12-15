@@ -23,7 +23,7 @@ export class ListMovieComponent implements OnInit {
         this.listMovie = response.movie;
         this.isLoaded = true;
         this.totalItems = response.totalItem;
-      console.log(response)
+  
       },
       (err) => {
         this.isLoaded = true;

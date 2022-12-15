@@ -1,11 +1,13 @@
 .home {
-  background: rgb(34, 193, 195);
+  /* background: rgb(34, 193, 195);
   background: linear-gradient(
     0deg,
     rgba(34, 193, 195, 1) 0%,
     rgba(149, 45, 253, 1) 84%
-  );
-  height: calc(100vh - 62px);
+  ); */
+  height: calc(100vh - 60px);
+  background: url("../../../assets/6011023_031320-cc-ss-empty-theater-img.jpg");
+  background-size: cover;
 }
 .box {
   width: 155px;
@@ -28,7 +30,7 @@
   font-size: 18px;
 }
 .wrap-carousel {
-  background: url("../../../assets/mvbn.jpg");
+
   height: 360px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,5 +39,6 @@
   align-items: center;
 }
 .list{
+  
   flex-wrap: wrap;
 }

@@ -53,6 +53,7 @@ export class ShowTimesComponent implements OnInit {
      
       });
       this.listMovie=response
+      this.msg=''
  
      
     },err=>{
@@ -71,4 +72,5 @@ export class ShowTimesComponent implements OnInit {
   navigateToDetail(movieId:number){
     this.router.navigate([`/movie-detail`],{ queryParams: { movieID: `${movieId}`} })
   }
+  
 }

@@ -2,13 +2,13 @@
   <h5 class="text-center m-0 py-3">Booking List</h5>
     <hr/>
     <div class="m-3"> 
-      <div style="display: flex; justify-content: end; align-items: center; margin-bottom: 50px;" class="text-tb">
-        <div style="display: flex; justify-content: space-between;">
+      <div style="display: flex; justify-content: end; align-items: center; margin-bottom: 0px;" class="text-tb">
+        <!-- <div style="display: flex; justify-content: space-between;">
             <label for="search" style="margin-right: 10px;">Search:</label>
             <input type="text" id="search" name="search" style="width: 250px; border-radius: 7px; border: 1px solid #BEC8CF;">
-          </div>
+          </div> -->
       </div>
-      <table class="table table-striped" style="font-size: 13px;">
+      <table class="table table-striped content-table" style="font-size: 13px;">
         <thead>
           <tr>
             <th scope="col" class="text-tb" style="border-top: none;">#</th>
@@ -29,7 +29,7 @@
             <td scope="row">{{ticket.ticketId}}</td>
             <td>{{ticket.accountId}}</td>
             <td>{{ticket.fullName }}</td>
-            <td>@{{ticket.identityCard}}</td>
+            <td>{{ticket.identityCard}}</td>
             <td>{{ticket.phoneNumber}}</td>
             <td>{{ticket.movieNameVN}}</td>
             <td>{{ticket.time}}</td>

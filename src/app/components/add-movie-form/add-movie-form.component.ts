@@ -192,7 +192,7 @@ export class AddMovieFormComponent implements OnInit {
                 'none';
                 this.isLoaded = true;
                 Swal.fire({
-                  icon: 'success',
+                  icon: 'success',    
                   title: 'Add successfully',
                 });
                 this.commonService.fileBehavior.unsubscribe()

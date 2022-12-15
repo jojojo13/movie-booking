@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   { path: 'search', component: ListSearchComponent },
   { path: 'booking-seat', component: BookingSeatComponent,canActivate:[AuthGuard] },
-  {path:'confirm-ticket',component:ConfirmTicketComponent},
+  {path:'confirm-ticket',component:ConfirmTicketComponent,canActivate:[AuthGuard]},
   {
     path: 'user',
     component: UserProfileComponent,

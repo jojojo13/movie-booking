@@ -199,3 +199,15 @@ i{
 .movie-details-prime li a{
     width: 100%;
 }
+.timeOfDate span{
+    display: inline-block;
+    width: 100px ;
+    text-align: center;
+}
+.timeOfDate span:hover{
+    background-color: #1696e7;
+    cursor: pointer;
+}
+.times{
+    margin-bottom: 15px;
+}

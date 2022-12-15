@@ -10,9 +10,11 @@
 .contain-all{
     background-color: #F5F5F5;
     min-height: calc(100vh - 52px);
+   background: url('../../../assets/6011023_031320-cc-ss-empty-theater-img.jpg');
+   background-size: cover;
 }
 body {
-    background-color: #F5F5F5;
+  
 }
 
 .topic-content {

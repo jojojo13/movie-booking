@@ -8,6 +8,9 @@
   align-items: center;
   font-family: Medium;
   background-color: rgb(207, 201, 201);
+  background: url('../../../assets/6011023_031320-cc-ss-empty-theater-img.jpg');
+  background-size: cover;
+  min-height: 600px;
 }
 h3{
     font-family: BoldItalic;
@@ -20,8 +23,10 @@ span{
 }
 .booking {
   width: 50%;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.3);
   padding: 30px;
+  border-radius: 10px;
+
  
 }
 .seats {

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
-  url = 'http://localhost:8080/api/auth';
+  url = 'https://hehe.up.railway.app/api/auth';
   public token = localStorage.getItem('token');
   public user: any;
   public userSubject: BehaviorSubject<boolean>;

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MovieServiceService {
-  url = 'http://localhost:8080/api/movie';
+  url = 'https://hehe.up.railway.app/api/movie';
   selectedMovie:any
   selectedDate:any
   selectedSchedule:any
@@ -42,7 +42,7 @@ export class MovieServiceService {
   }
   getMovieByDate(date: string) {
     return this.$http.get(
-      `http://localhost:8080/api/scheduleMovie?date=${date}`
+      `https://hehe.up.railway.app/api/scheduleMovie?date=${date}`
     );
   }
 }

@@ -1,4 +1,4 @@
-<div class="home ">
+<div class="home">
   <div class="wrap-carousel">
     <ngx-slick-carousel
       class="carousel"
@@ -19,19 +19,24 @@
     </ngx-slick-carousel>
   </div>
 
-  <!-- <button (click)="addSlide()">Add</button>
-  <button (click)="removeSlide()">Remove</button>
-  <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-  <button (click)="slickModal.unslick()">unslick</button> -->
   <app-loader [isLoaded]="isLoaded"></app-loader>
   <div class="content px-5 mt-3" *ngIf="listMovie">
-   
-    <h5 class="text-white" >Hanh Dong</h5>
-    <div class="list d-flex justify-content-between">
-      <div class="item mr-3" *ngFor="let movie of listMovie" routerLink="booking-seat" (click)="navigateTo(movie.movieId)">
+    <h5 class="text-white">Hanh Dong</h5>
+    <div class="list d-flex ">
+      <div
+        class="item mr-3"
+        *ngFor="let movie of listMovie"
+        routerLink="booking-seat"
+        (click)="navigateTo(movie.movieId)"
+      >
         <div class="box">
           <img [src]="movie.small_image" alt="anh nay bi loi" />
+          <div class="detail">
+            <h6 class="mb-0">{{ movie.movie_name_vn }}</h6>
+            <small class="cus">{{ movie.actor }}</small>
+          </div>
         </div>
+
         <div class="schedule">
           <p>View schedule</p>
         </div>

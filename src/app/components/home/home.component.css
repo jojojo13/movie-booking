@@ -5,21 +5,30 @@
     rgba(34, 193, 195, 1) 0%,
     rgba(149, 45, 253, 1) 84%
   ); */
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background: url("../../../assets/6011023_031320-cc-ss-empty-theater-img.jpg");
   background-size: cover;
 }
 .box {
-  width: 155px;
-  height: 194px;
+  width: 205px;
+  height: 255px;
+  position: relative;
 }
 .item {
   color: #fff;
 }
 .box img {
+  border-radius: 5px;
   width: 100%;
   height: 100%;
-  align-self: stretch;
+  align-self: cover;
+  border: 3px solid gray;
+}
+.slide img{
+  border-radius: 5px;
+
+  align-self: cover;
+  border: 3px solid gray;
 }
 .schedule {
   background-color: rgba(243, 105, 105, 0.97);
@@ -30,15 +39,57 @@
   font-size: 18px;
 }
 .wrap-carousel {
-
   height: 360px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 5%;
   display: flex;
   align-items: center;
+
+  background-size: cover;
 }
-.list{
-  
+.list {
   flex-wrap: wrap;
+  justify-content: space-around;
+}
+.item {
+  margin: 20px 10px;
+  --b: 8px; /* the border thickness*/
+  --g: 10px; /* the gap */
+  --c: #4ecdc4; /* the color */
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s) / 2) solid #0009;
+  outline-offset: calc(var(--s) / -2);
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+
+}
+.item:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+.item:hover .detail {
+ visibility: visible;
+ transform: scaleY(100%);
+ width: 100%;
+}
+img + img {
+  border-radius: 50%;
+}
+
+.detail {
+  position: absolute;
+  background-color: RGBA(40, 36, 41, 0.68);
+  bottom: 0;
+  transform: scaleY(0%);
+  width: 100%;
+  padding: 10px;
+  visibility: hidden;
+  transition: 0.4s;
+  transform-origin:  bottom;
+}
+.cus {
+  color: #e4d804;
 }

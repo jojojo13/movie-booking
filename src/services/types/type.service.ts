@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TypeService {
 
-  url = 'http://localhost:8080/api/type';
+  url = 'https://hehe.up.railway.app/api/type';
   constructor(private http:HttpClient) { }
 
   getAllType(){

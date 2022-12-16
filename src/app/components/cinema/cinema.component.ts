@@ -22,11 +22,12 @@ export class CinemaComponent implements OnInit {
     this.router.navigate([`admin/cinema/seat`],{ queryParams: { cinemaID: `${cinemaID}`} })
   }
   loadData(){
+    this.isLoaded=false
     this.cinemaService.getAllCinema(this.page - 1, this.itemsPerPage).subscribe((response:any)=>{
       this.listCinema=response.cinemas
       this.isLoaded=true
       this.totalItems = response.totalItem;
-      console.log(this.listCinema)
+    
     },err=>{
       this.isLoaded=true
     })

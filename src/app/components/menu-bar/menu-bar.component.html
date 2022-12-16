@@ -1,10 +1,18 @@
 <div class="menu">
-  
+  <div class="d-flex justify-content-center d-flex first align-items-center">
+   <img src="../../../assets/logo-nha-tai-tro-fpt-soft-ware-2020-05-18.png" class="mr-1" alt="">
+   <div class="detail">
+    <h5 class="mb-0">Admin Menu</h5>
+    <p>Movie cinema</p>
+   </div>
+  </div>
   <ul>
-    <li  [routerLink]="['employee']" routerLinkActive="active">Employee</li>
-    <li [routerLink]="['movie']" routerLinkActive="active">Movies</li>
-    <li [routerLink]="['cinema']" routerLinkActive="active">Cinema Room</li>
-    <li  [routerLink]="['booking-list']" routerLinkActive="active">Booking List</li>
-    <li>Promotion</li>
+    <li [routerLink]="['employee']" routerLinkActive="active"><p><i class="fa fa-user-o" aria-hidden="true"></i>Employee</p></li>
+    <li [routerLink]="['movie']" routerLinkActive="active"><p><i class="fa fa-film" aria-hidden="true"></i>Movies</p></li>
+    <li [routerLink]="['cinema']" routerLinkActive="active"><p><i class="fa fa-home" aria-hidden="true"></i>Cinema Room</p></li>
+    <li [routerLink]="['booking-list']" routerLinkActive="active">
+     <p><i class="fa fa-list-ul" aria-hidden="true"></i>Booking List</p>
+    </li>
+    <li><p><i class="fa fa-gift" aria-hidden="true"></i>Promotion</p></li>
   </ul>
 </div>

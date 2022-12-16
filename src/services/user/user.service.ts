@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  url = 'http://localhost:8080/api/user';
+  url = 'https://hehe.up.railway.app/api/user';
   constructor(private $http: HttpClient) { }
 
   getUserByID(id:number){
@@ -43,6 +43,7 @@ export class UserService {
       this.url + `/add-employee`,employee,httpOptions1
     );
   }
+  
   getAllUserAsEmployee(index:number,size:number){
     let httpOptions1 = {
       headers: new HttpHeaders({

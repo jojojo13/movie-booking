@@ -11,7 +11,7 @@ img{
 .contain{
     padding: 40px;
     width: 100%;
-    background:url('https://themebeyond.com/html/movflx/img/bg/movie_details_bg.jpg');
+    background:url('../../../assets/6011023_031320-cc-ss-empty-theater-img.jpg');
     min-height: calc(100vh - 52px);
     background-size: cover;
 }

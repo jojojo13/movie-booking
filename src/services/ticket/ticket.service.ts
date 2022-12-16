@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TicketService {
-  url = 'http://localhost:8080/api/ticket';
+  url = 'https://hehe.up.railway.app/api/ticket';
   constructor(private http:HttpClient) { }
 
   getAllTicket(){

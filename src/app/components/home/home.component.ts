@@ -28,7 +28,9 @@ export class HomeComponent implements OnInit {
     console.log('breakpoint');
   }
   afterChange(e: any) {
-    console.log('afterChange');
+    // .style.backgroundImage="url('img_tree.png')";
+    console.log( document.querySelector('.slide .slick-slide .slick-current .slick-active'))
+    
   }
   beforeChange(e: any) {
     console.log('beforeChange');
@@ -37,6 +39,7 @@ export class HomeComponent implements OnInit {
     this.movieService.getAllMovies(0,999999999).subscribe((response:any) => {
       this.listMovie = response.movie;
       this.isLoaded=true
+      console.log(this.listMovie)
     
     });
   }

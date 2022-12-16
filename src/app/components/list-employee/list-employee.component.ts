@@ -19,6 +19,7 @@ export class ListEmployeeComponent implements OnInit {
     this.loadData()
   }
   loadData() {
+    this.isLoaded=false
     this.userService.getAllUserAsEmployee(this.page - 1, this.itemsPerPage).subscribe(
       (response: any) => {
         this.listEmployee = response.employees;

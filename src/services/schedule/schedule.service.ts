@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ScheduleService {
 
-  url = 'http://localhost:8080/api/schedule';
+  url = 'https://hehe.up.railway.app/api/schedule';
   constructor(private http:HttpClient) { }
 
   getAllSchedule(){

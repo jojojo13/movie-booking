@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class SeatService {
   constructor(private http: HttpClient) {}
-  url = 'http://localhost:8080/api/seats';
-  urlBooking = 'http://localhost:8080/api/booking';
+  url = 'https://hehe.up.railway.app/api/seats';
+  urlBooking = 'https://hehe.up.railway.app/api/booking';
   getSeatByScheduleId(scheduleId: number) {
     return this.http.get(this.url + `?scheduleMovieId=${scheduleId}`);
   }

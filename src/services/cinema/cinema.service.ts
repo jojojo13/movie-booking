@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CinemaService {
-  url = 'http://localhost:8080/api/cinemaroom';
+  url = 'https://hehe.up.railway.app/api/cinemaroom';
   selectedCinemaRoom:any
   constructor(private http:HttpClient) { }
 

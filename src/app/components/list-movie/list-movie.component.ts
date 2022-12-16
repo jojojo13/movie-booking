@@ -18,6 +18,7 @@ export class ListMovieComponent implements OnInit {
     this.loadData();
   }
   loadData() {
+    this.isLoaded=false
     this.movieService.getAllMovies(this.page - 1, this.itemsPerPage).subscribe(
       (response: any) => {
         this.listMovie = response.movie;

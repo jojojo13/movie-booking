@@ -39,7 +39,7 @@ export class AccountInfoComponent implements OnInit {
               identityCard: [{value:this.user.identityCard,disabled:true}, [Validators.required]],
               email: [{value:this.user.email,disabled:true}, [Validators.required]],
               address: [this.user.address],
-              phoneNumber: [this.user.phoneNumber, Validators.required],
+              phoneNumber: [{value:this.user.phoneNumber,disabled:true}, Validators.required],
             },
             // { validator: this.passwordMatchValidator }
           );
@@ -60,8 +60,8 @@ export class AccountInfoComponent implements OnInit {
     this.user.dateOfBirth=this.updatedForm.value.dateOfBirth
     this.user.gender=parseInt(this.updatedForm.value.gender) 
     this.user.fullName=this.updatedForm.value.fullName
-    this.user.identityCard=this.updatedForm.value.identityCard
-    this.user.phoneNumber=this.updatedForm.value.phoneNumber
+    //this.user.identityCard=this.updatedForm.value.identityCard
+   // this.user.phoneNumber=this.updatedForm.value.phoneNumber
 
     this.isLoaded=false
     this.userService.updateUserProfile(this.user).subscribe((response)=>{

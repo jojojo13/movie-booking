@@ -1,3 +1,4 @@
+import { ConfirmTicketAdminComponent } from './components/confirm-ticket-admin/confirm-ticket-admin.component';
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 import { CinemaComponent } from './components/cinema/cinema.component';
 import { NgModule } from '@angular/core';
@@ -35,6 +36,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: WrapperOutletComponent,
+    canActivate:[BlockedUserGuard],
     // canActivate:[AuthGuard,BlockedUserGuard],
     children: [
       { path: 'movie', component: ListMovieComponent },
@@ -44,7 +46,8 @@ const routes: Routes = [
       {path:'cinema/seat',component:CinemaSeatComponent},
       {path:'employee',component:ListEmployeeComponent},
       {path:'employee/add',component:AddEmployeeFormComponent},
-      {path:'employee/edit/:id',component:EditEmployeeComponent}
+      {path:'employee/edit/:id',component:EditEmployeeComponent},
+      {path:'booking-list/:id',component:ConfirmTicketAdminComponent}
     ],
   },
   { path: 'search', component: ListSearchComponent },
@@ -53,6 +56,7 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserProfileComponent,
+    canActivate:[AuthGuard],
     children: [{ path: 'account-info', component: AccountInfoComponent },
     {path:'history',component:HistoryScoreComponent},{
       path:'booking-history',component:BookingHistoryComponent

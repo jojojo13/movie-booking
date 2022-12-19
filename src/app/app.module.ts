@@ -38,6 +38,7 @@ import { BookingHistoryComponent } from './components/booking-history/booking-hi
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 import { AddEmployeeFormComponent } from './components/add-employee-form/add-employee-form.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { ConfirmTicketAdminComponent } from './components/confirm-ticket-admin/confirm-ticket-admin.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     ListEmployeeComponent,
     AddEmployeeFormComponent,
     EditEmployeeComponent,
+    ConfirmTicketAdminComponent,
     
   ],
   imports: [
@@ -78,7 +80,7 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFireDatabaseModule,
+   // AngularFireDatabaseModule,
     // AngularFireStorageModule,
  
   ],

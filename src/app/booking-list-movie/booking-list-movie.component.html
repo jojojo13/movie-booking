@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ticket of listTicket;let i=index">
+          <tr *ngFor="let ticket of listTicket;let i=index" (click)="navigateToCf(ticket)">
             <td>{{i+1}}</td>
             <td scope="row">{{ticket.ticketId}}</td>
             <td>{{ticket.accountId}}</td>
@@ -32,10 +32,11 @@
             <td>{{ticket.identityCard}}</td>
             <td>{{ticket.phoneNumber}}</td>
             <td>{{ticket.movieNameVN}}</td>
-            <td>{{ticket.time}}</td>
+            <td>{{ticket.date}} - {{ticket.time }}</td>
             <td>{{ticket.seat}}</td>
             <td class="text-primary ">
-                <p class="p-2 booked">Successful booking</p>
+                <p class="p-2 booked" *ngIf="ticket.ticketStatus==1">Successful booking</p>
+                <p class="p-2 getTk" *ngIf="ticket.ticketStatus==0">Waiting for confirm</p>
             </td>
           </tr>
      

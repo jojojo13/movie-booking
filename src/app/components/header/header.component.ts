@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
       if (localStorage.getItem('token') != null) {
         this.auth.getUserInfo().subscribe((res: any) => {
           this.auth.user = res;
-        
+          
           this.auth.userSubject.next(true)
         });
       } else {
@@ -36,5 +36,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/login');
     this.auth.userSubject.next(true);
     this.auth.headerSubject.next(true)
+  }
+  login(){
+    this.router.navigateByUrl('/login');
   }
 }

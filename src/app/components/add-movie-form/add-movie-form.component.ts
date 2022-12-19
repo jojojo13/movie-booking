@@ -174,7 +174,7 @@ export class AddMovieFormComponent implements OnInit {
           }
         );
    
-    
+        
     this.commonService.fileBehavior.subscribe((change)=>{
       if(this.commonService.videoUploaded==true){
       if(change==true){
@@ -196,7 +196,9 @@ export class AddMovieFormComponent implements OnInit {
                   title: 'Add successfully',
                 });
                 this.commonService.fileBehavior.unsubscribe()
+               
                 this.router.navigateByUrl('/admin/movie')
+               
               },
               (err) => {
                 (document?.querySelector('.overlay') as HTMLElement).style.display =
@@ -206,7 +208,7 @@ export class AddMovieFormComponent implements OnInit {
                   icon: 'error',
                   title: 'Duplicate show date',
                 });
-                this.commonService.fileBehavior.unsubscribe()
+               
               }
             );
         }

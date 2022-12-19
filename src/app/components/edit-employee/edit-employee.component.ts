@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/services/auth/auth.service';
@@ -18,7 +18,8 @@ export class EditEmployeeComponent implements OnInit {
     private userService: UserService,
     private auth: AuthService,
     private fb: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -47,7 +48,7 @@ export class EditEmployeeComponent implements OnInit {
               [Validators.required],
             ],
             address: [this.user.address],
-            phoneNumber: [this.user.phoneNumber, Validators.required],
+            phoneNumber: [{value:this.user.phoneNumber,disabled:true}, Validators.required],
           }
           // { validator: this.passwordMatchValidator }
         );
@@ -65,7 +66,7 @@ export class EditEmployeeComponent implements OnInit {
     this.user.gender = parseInt(this.updatedForm.value.gender);
     this.user.fullName = this.updatedForm.value.fullName;
     // this.user.identityCard='909092222'
-    this.user.phoneNumber = this.updatedForm.value.phoneNumber;
+    // this.user.phoneNumber = this.updatedForm.value.phoneNumber;
 
     this.isLoaded = false;
     this.userService.updateUserProfile(this.user).subscribe(
@@ -75,8 +76,8 @@ export class EditEmployeeComponent implements OnInit {
           icon: 'success',
           title: 'Update successfully',
         });
-        this.ngOnInit();
-        this.auth.userSubject.next(true);
+   
+        this.router.navigateByUrl('/admin/employee')
       },
       (err) => {
         this.isLoaded = true;

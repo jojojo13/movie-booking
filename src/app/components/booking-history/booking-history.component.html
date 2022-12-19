@@ -60,8 +60,8 @@
           <td>{{ booking.movieName }}</td>
           <td>{{ booking.bookingDate }}</td>
           <td>{{ booking.price }}</td>
-          <td class="text-primary" *ngIf="booking.status==0">Waiting for ticket</td>
-          <td class="text-primary" *ngIf="booking.status==1||booking.status==undefined">Got the ticket</td>
+          <td class="text-primary font-weight-bold" *ngIf="booking.status==0">Waiting for confirm</td>
+          <td class="text-success font-weight-bold" *ngIf="booking.status==1||booking.status==undefined">Ticket confirmed</td>
         </tr>
       </tbody>
     </table>

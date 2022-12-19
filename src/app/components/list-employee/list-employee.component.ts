@@ -25,7 +25,7 @@ export class ListEmployeeComponent implements OnInit {
         this.listEmployee = response.employees;
         this.isLoaded = true;
         this.totalItems = response.totalItem;
-     
+        
       },
       (err) => {
         this.isLoaded = true;
@@ -37,5 +37,8 @@ export class ListEmployeeComponent implements OnInit {
   }
   navigateToEdit(accountId:number){
     this.router.navigate(['/admin/employee/edit',accountId])
+  }
+  addNew(){
+    this.router.navigateByUrl('/admin/employee/add')
   }
 }

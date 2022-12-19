@@ -1,0 +1,126 @@
+<div class="sa">
+  <div class="confirm-text">
+    <p>CONFIRM BOOKING TICKET</p>
+  </div>
+
+  <div class="saa" style="width: auto">
+    <app-loader [isLoaded]="isLoaded"></app-loader>
+    <div class="row">
+      <div class="col-2" style="background-color: #ffffff" *ngIf="movie">
+        <div
+          class="image"
+          style="
+            width: 160px;
+            height: 239px;
+            background-color: black;
+            margin-left: 15px;
+            margin-top: 65px;
+          "
+        >
+          <img [src]="movie.small_image" height="100%" width="100%" />
+        </div>
+      </div>
+
+      <div class="col-10" style="background-color: #ffffff" *ngIf="movie">
+        <div class="content" style="margin-top: 65px">
+          <div class="title-1">
+            <p class="p1">{{ movie.movie_name_vn }}</p>
+          </div>
+          <div class="table-1">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="text-topic">Date:</td>
+                  <td class="topic-content">{{ ticket.date }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Time:</td>
+                  <td class="topic-content">{{ ticket.time }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Seat:</td>
+                  <td class="topic-content">{{ ticket.seat }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="title-2">
+            <p class="p2">Member Information</p>
+          </div>
+
+          <!-- <div class="search">
+            <nav class="navbar navbar-light bg">
+              <form class="form-inline">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="SV7FFuDw"
+                  aria-label="Search"
+                  style="
+                    border-radius: 10px;
+                    width: 555px;
+                    background-color: #fffdc8;
+                  "
+                />
+                <button
+                  class="btn"
+                  type="submit"
+                  style="
+                    border-radius: 10px;
+                    background-color: #337ab7;
+                    color: #ffffff;
+                  "
+                >
+                  Check
+                </button>
+              </form>
+            </nav>
+          </div> -->
+
+          <div class="table-2" *ngIf="user">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="text-topic" style="border-top: none">
+                    Member ID:
+                  </td>
+                  <td class="topic-content" style="border-top: none">
+                    {{ user.accountId }}
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Full name:</td>
+                  <td class="topic-content">{{ user.fullName }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Identity card:</td>
+                  <td class="topic-content">{{ user.identityCard }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-topic">Phone number:</td>
+                  <td class="topic-content">{{ user.phoneNumber }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="s"
+   
+    *ngIf="user"
+  >
+    <button
+      type="button"
+      class="btn btn-primary"
+      style=" background-color: #337ab7; color: #ffffff"
+      (click)="confirm()"
+    >
+      Confirm Booking Ticket
+    </button>
+  </div>
+</div>

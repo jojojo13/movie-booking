@@ -31,5 +31,19 @@ export class AuthService {
     };
     return this.http.get(this.url + '/userInfo', httpOptions1);
   }
-
+  checkUserIsCustomer():Promise<boolean> {
+    let httpOptions1 = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      }),
+    };
+     return this.http.get(this.url + '/userInfo', httpOptions1).toPromise().then((data:any)=>{
+      if(data.role=='Customer'){
+        return true;
+      }else{
+        return false;
+      }
+     })
+  }
 }

@@ -85,10 +85,14 @@ p{
   border-bottom: 1px solid #dddddd;
 }
 
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
+
 
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
+}
+tbody tr{
+  cursor: pointer;
+}
+tbody tr:hover{
+  background-color: rgb(196, 190, 190);
 }
